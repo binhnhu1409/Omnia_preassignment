@@ -17,14 +17,19 @@ def same_chars():
     index2 = int(input("Enter another index refer a character you want to compare with the previous one:"))
 
     # Print out output
-    print(f"same_chars({user_string}, {index1}, {index2})")
+    print(f"Your input: same_chars({user_string}, {index1}, {index2})")
+    # check if the index that user input is valid
     if index1 < 0 or index2 < 0 or index1 > len(user_string) or index2 > len(user_string):
-        print(False)
+        print("The index you entered is not valid.")
+        return False
     else:
+        # check if 2 characters at those specified indexes are the same
         if user_string[index1] == user_string[index2]:
-            print(True)
+            print("True! There are two identical characters at the given indices.")
+            return True
         else:
-            print(False)
+            print("False! The two characters are not identical.")
+            return False
 
 # The following lines is to call the same_chars() function
 if __name__ == '__main__':
